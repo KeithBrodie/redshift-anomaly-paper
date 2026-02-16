@@ -78,7 +78,7 @@ This is exact — a mathematical theorem, not an approximation. It is the same l
 The eigenvalues correspond to zeros of the modified Bessel function $K_{i\mu}(\kappa a)$, which are exactly log-periodic in $\kappa$ with ratio $\exp(\pi/\mu)$.
 
 ![Efimov verification](figures/fig1_efimov_verification.png)
-*Figure 1: Left — the modified Bessel function $K_{i\mu}(x)$ for $\mu = 15.38$, showing log-periodic zeros (red dashed lines). Right — consecutive zero ratios converge to the theoretical value $\exp(\pi/\mu) = 1.2266$ to machine precision.*
+*Figure 1: Left — the Efimov eigenvalue spectrum, showing equal spacing in log scale (the hallmark of discrete scale invariance). Right — consecutive zero ratios of the modified Bessel function converge to the theoretical value 1.2266 to machine precision.*
 
 ### 2.3 Mapping to Redshift Periodicity
 
@@ -151,7 +151,7 @@ The total effective coupling is therefore:
 
 $$g = N_{\text{DOF}} \times (2\pi)^2 = 6 \times 4\pi^2 = 24\pi^2 \approx 236.87$$
 
-**We emphasize that the $(2\pi)^2$ factor, while geometrically natural, is not rigorously derived from first principles in this work.** A rigorous derivation would require integrating the fluctuation correlator over the horizon surface within the Jacobson (1995) thermodynamic framework; the $(2\pi)^2$ is the geometric prefactor expected from such a calculation. We return to this open problem in Section 6.
+**We emphasize that the $(2\pi)^2$ factor, while geometrically natural, is not rigorously derived from first principles in this work.** A rigorous derivation would require integrating the fluctuation correlator over the horizon surface within the Jacobson (1995) thermodynamic framework; the $(2\pi)^2$ is the geometric prefactor expected from such a calculation. We return to this open problem in Section 5.
 
 ### 3.4 The Prediction
 
@@ -189,7 +189,7 @@ The predicted period depends on $N_{\text{DOF}}$ through $g = N \times (2\pi)^2$
 Only $N_{\text{DOF}} = 6$ falls within $1\sigma$. The nearest competitors ($N = 5$ at $1.6\sigma$ and $N = 7$ at $1.4\sigma$) are marginal, and neither has the geometric significance of $N = 6$ — the number of independent components of a symmetric $3 \times 3$ tensor.
 
 ![Sensitivity analysis](figures/fig2_sensitivity.png)
-*Figure 2: Predicted Karlsson period vs. number of field DOF. The red band shows the observed value $0.089 \pm 0.005$. Only $N = 6$ (green dashed line) — the number of independent components of the spatial metric — falls within $1\sigma$.*
+*Figure 2: Predicted Karlsson period vs. number of field DOF. The red band shows the observed value 0.089 +/- 0.005. Only N = 6 (green dashed line) — the number of independent components of the spatial metric — falls within 1 sigma.*
 
 ---
 
@@ -208,7 +208,7 @@ $$\text{RMS} = 0.00161$$
 This is 1.8% of one period — the predicted peak positions are essentially exact.
 
 ![Peak comparison](figures/fig3_peak_comparison.png)
-*Figure 3: Top — predicted (blue line) vs. observed (red circles) Karlsson peaks in $\log_{10}(1+z)$ space. Bottom — residuals, with RMS = 0.00161 (1.8% of one period).*
+*Figure 3: Top — predicted (blue line) vs. observed (red circles) Karlsson peaks in log(1+z) space. Bottom — residuals, with RMS = 0.00161 (1.8% of one period).*
 
 ### 4.2 Monte Carlo Significance
 
@@ -231,29 +231,9 @@ This is not a failure. The Karlsson periodicity is a **population phenomenon**: 
 
 ---
 
-## 5. Perturbative Cross-Check
+## 5. Discussion
 
-An important consistency check: does perturbative quantum field theory in the weak-field halo metric give the right coupling?
-
-The linearized metric for an isothermal halo is:
-
-$$ds^2 = -(1 + 2\Phi/c^2)\,c^2 dt^2 + (1 - 2\Phi/c^2)(dr^2 + r^2 d\Omega^2)$$
-
-with $\Phi(r) = 2\sigma^2 \ln(r/r_0)$. For a conformally coupled scalar field ($\xi = 1/6$), the effective coupling per DOF is:
-
-$$g_\xi = \frac{4}{3}\frac{\sigma^2}{c^2} \sim 10^{-6}$$
-
-The total for 6 DOF is $\sim 6 \times 10^{-6}$ — **too small by a factor of $4 \times 10^7$**.
-
-This is **expected**, not problematic. The Jacobson (1995) derivation of the Einstein equations from horizon thermodynamics ($\delta Q = T\,dS$ with $S = A/4l_P^2$) is intrinsically non-perturbative. The entropy $S = A/4l_P^2$ counts ALL vacuum degrees of freedom at a horizon — it is not a perturbative correction to flat-space QFT. Our coupling $g = 24\pi^2$ has the structure of a counting quantity (integer × geometric factor), suggesting a topological rather than dynamical origin.
-
-The analogy to electromagnetism is instructive: the fine-structure constant $\alpha_{\text{EM}} = 1/137$ cannot be derived from classical electrodynamics. It requires the full quantum theory. Similarly, $g = 24\pi^2$ may require a non-perturbative quantum gravity calculation to derive rigorously.
-
----
-
-## 6. Discussion
-
-### 6.1 What Is Derived vs. What Is Assumed
+### 5.1 What Is Derived vs. What Is Assumed
 
 We have been careful to label each step in the derivation chain:
 
@@ -263,11 +243,11 @@ We have been careful to label each step in the derivation chain:
 - **Hypothesis**: That all 6 components (including non-propagating ones) couple to the halo boundary in the quantum vacuum. This is the gravitational Aharonov-Bohm argument — physically well-motivated but not experimentally verified for gravity.
 - **Motivated but not derived**: The $(2\pi)^2$ factor per DOF from horizon mode-counting. This is the weakest link. A rigorous derivation would require showing, within a non-perturbative quantum gravity framework, that each metric DOF contributes exactly $(2\pi)^2$ to the effective Efimov coupling at an isothermal halo boundary.
 
-### 6.2 The Offset
+### 5.2 The Offset
 
 The Karlsson formula contains an offset ($\sim -0.0632$) in addition to the period. Our derivation predicts only the period. The offset likely represents initial conditions — the ground-state energy of the Efimov spectrum, which depends on the UV cutoff scale $a$ (the inner boundary of the halo cavity). Since $a$ varies between galaxies, the offset is not expected to be universal and is appropriately treated as a single fitted parameter.
 
-### 6.3 Relation to Quantised Inertia
+### 5.3 Relation to Quantised Inertia
 
 McCulloch's Quantised Inertia (QI) framework derives flat rotation curves from vacuum mode truncation at the Hubble horizon. Our work is complementary:
 
@@ -276,7 +256,7 @@ McCulloch's Quantised Inertia (QI) framework derives flat rotation curves from v
 
 Both effects arise from the same vacuum modes interacting with the same boundary conditions, but they address different observables. The halo does not significantly change the total mode count (the fractional correction $\Delta N / N$ is tiny), but it restructures the modes into a discrete pattern.
 
-### 6.4 Asymmetry and Association Dependence
+### 5.4 Asymmetry and Association Dependence
 
 Two key observational features of the Karlsson periodicity find natural explanations in this framework.
 
@@ -284,7 +264,7 @@ Two key observational features of the Karlsson periodicity find natural explanat
 
 **Association dependence.** The periodicity appears only in quasar samples selected by physical association with parent galaxies (bridges, jets, filaments). Field quasars show smooth redshift distributions. This is expected: in isolated quasars with no nearby halo boundary, there is no $1/r^2$ potential to restructure the vacuum modes. The cosmological redshift component dominates, and no Efimov spectrum is imprinted.
 
-### 6.5 Predictions and Tests
+### 5.5 Predictions and Tests
 
 1. **Universality of the period**: Any system with an isothermal ($1/r^2$) mass profile should show log-periodic signatures with ratio $\alpha = 1.227$, regardless of the system's mass or size. This could be tested in galaxy cluster halos.
 
@@ -292,7 +272,7 @@ Two key observational features of the Karlsson periodicity find natural explanat
 
 3. **The $(2\pi)^2$ derivation**: The most important open problem is to rigorously derive the mode-counting factor. This would elevate the result from a prediction to a derivation.
 
-### 6.6 Why the Period Cannot Be Accidental
+### 5.6 Why the Period Cannot Be Accidental
 
 The probability that $g = 24\pi^2$ accidentally matches Karlsson's period is bounded by the Monte Carlo result ($p < 0.00002$). But the argument is stronger than this:
 
@@ -305,7 +285,7 @@ Four independent coincidences aligning simultaneously is unlikely to be accident
 
 ---
 
-## 7. Conclusion
+## 6. Conclusion
 
 We have shown that the Karlsson redshift periodicity $\Delta\log_{10}(1+z) = 0.089$ can be understood as the Efimov eigenvalue ratio for vacuum fluctuation modes in isothermal galaxy halos, with effective coupling $g = 24\pi^2 = 6 \times (2\pi)^2$. The prediction matches observation at $0.1\sigma$ with zero free parameters for the period.
 

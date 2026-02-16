@@ -120,27 +120,33 @@ def section_efimov_verification():
     print(f"  Max deviation from theory: {max_dev:.2e}")
     print()
 
-    # --- Figure 1: K_{iμ}(x) with zeros marked, plus ratio verification ---
+    # --- Figure 1: Efimov level diagram + ratio verification ---
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
 
-    # Left: the Bessel function
-    x_plot = np.logspace(-4, 1.5, 800)
-    k_re = np.array([float(mpmath.re(mpmath.besselk(1j * mu, x))) for x in x_plot])
+    # Left: Efimov level diagram — show the log-periodic eigenvalues
+    log_zeros = np.log10(zeros[:10])
+    for i, lz in enumerate(log_zeros):
+        ax1.plot([0.2, 0.8], [lz, lz], "C0-", lw=2.5)
+        ax1.text(0.85, lz, f"n = {i+1}", fontsize=9, va="center")
+    # Mark the constant spacing in log space
+    for i in range(min(9, len(log_zeros) - 1)):
+        mid = (log_zeros[i] + log_zeros[i + 1]) / 2
+        ax1.annotate("", xy=(0.15, log_zeros[i + 1]), xytext=(0.15, log_zeros[i]),
+                     arrowprops=dict(arrowstyle="<->", color="C3", lw=1.5))
+    ax1.text(0.02, np.mean(log_zeros[:2]),
+             f"ratio = {alpha:.4f}\n(constant)",
+             fontsize=9, color="C3", va="center")
+    ax1.set_xlim(-0.05, 1.1)
+    ax1.set_ylabel(r"$\log_{10}(\kappa_n)$", fontsize=12)
+    ax1.set_title("Efimov eigenvalue spectrum\n(equal spacing in log scale)", fontsize=12)
+    ax1.set_xticks([])
+    ax1.grid(True, axis="y", alpha=0.3)
 
-    ax1.semilogx(x_plot, k_re, "C0-", lw=1.5)
-    ax1.axhline(0, color="k", lw=0.5)
-    for z in zeros[:8]:
-        ax1.axvline(z, color="C3", ls=":", alpha=0.6)
-    ax1.set_xlabel("x", fontsize=12)
-    ax1.set_ylabel(r"Re[$K_{i\mu}(x)$]", fontsize=12)
-    ax1.set_title(f"Modified Bessel function ($\\mu = {mu:.2f}$)", fontsize=12)
-    ax1.set_ylim(-0.3, 0.3)
-    ax1.grid(True, alpha=0.3)
-
-    # Right: ratio convergence
-    ax2.plot(range(1, len(ratios) + 1), ratios, "C0o-", ms=6)
+    # Right: ratio convergence — both numerical and theoretical
+    ax2.plot(range(1, len(ratios) + 1), ratios, "C0o-", ms=6,
+             label=f"Numerical (zeros of $K_{{i\\mu}}$)")
     ax2.axhline(alpha, color="C3", ls="--", lw=2,
-                label=f"$\\exp(\\pi/\\mu) = {alpha:.6f}$")
+                label=f"Theory: exp($\\pi/\\mu$) = {alpha:.6f}")
     ax2.set_xlabel("Zero index pair", fontsize=12)
     ax2.set_ylabel("$x_{n+1} / x_n$", fontsize=12)
     ax2.set_title("Consecutive zero ratios (Efimov test)", fontsize=12)
@@ -360,33 +366,6 @@ def section_monte_carlo(rms_observed):
 
 
 # ═══════════════════════════════════════════════════════════════════
-# Section 5: Perturbative cross-check
-# ═══════════════════════════════════════════════════════════════════
-
-def section_perturbative():
-    """Show that perturbative QFT gives the wrong coupling."""
-    print("=" * 70)
-    print("SECTION 5: Perturbative Cross-Check")
-    print("=" * 70)
-    print()
-
-    c = 2.9979e10  # cm/s
-    print(f"  Weak-field coupling per DOF: g_ξ = (4/3)(σ/c)²")
-    print()
-    print(f"  {'σ (km/s)':<12} {'g_ξ':<15} {'6 × g_ξ':<15} {'Need'}")
-    print(f"  {'-' * 50}")
-    for sigma_kms in [100, 150, 200, 220, 300]:
-        eps = sigma_kms * 1e5 / c
-        g_xi = (4.0 / 3) * eps ** 2
-        print(f"  {sigma_kms:<12} {g_xi:<15.2e} {6 * g_xi:<15.2e} {24 * np.pi**2:.1f}")
-
-    print()
-    print(f"  Perturbative result: g ~ 10⁻⁶  (too small by ~4 × 10⁷)")
-    print(f"  → g = 24π² is NON-PERTURBATIVE")
-    print()
-
-
-# ═══════════════════════════════════════════════════════════════════
 # Summary
 # ═══════════════════════════════════════════════════════════════════
 
@@ -427,7 +406,6 @@ def main():
     section_sensitivity()
     rms = section_peak_comparison()
     section_monte_carlo(rms)
-    section_perturbative()
     summary()
     print(f"  All figures saved to: {FIGDIR.resolve()}")
     print()
