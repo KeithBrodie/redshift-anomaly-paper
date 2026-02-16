@@ -154,7 +154,15 @@ parts in~$10^{11}$.
 
 The eigenvalues correspond to zeros of the modified Bessel function
 $K_{i\mu}(\kappa a)$, which are exactly log-periodic in~$\kappa$ with ratio
-$\exp(\pi/\mu)$.
+$\exp(\pi/\mu)$.  This is verified numerically in Fig.~\ref{fig:efimov}.
+
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{fig1_efimov_verification.png}
+\caption{\label{fig:efimov}Left: Efimov eigenvalue spectrum showing equal
+  spacing in log scale (discrete scale invariance).  Right: consecutive
+  zero ratios of $K_{i\mu}(x)$ converge to the theoretical value
+  $\exp(\pi/\mu) = 1.2266$ to machine precision.}
+\end{figure}
 
 \subsection{Mapping to Redshift Periodicity}
 
@@ -300,6 +308,14 @@ $N$ & $g$ & $\log_{10}\alpha$ & Deviation & Interpretation \\
 \end{ruledtabular}
 \end{table}
 
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{fig2_sensitivity.png}
+\caption{\label{fig:sensitivity}Predicted period $\log_{10}\alpha$ as a
+  function of the number of field degrees of freedom $N$.  The horizontal
+  band shows the Karlsson observed value $0.089 \pm 0.005$.  Only $N = 6$
+  (the full spatial metric $h_{ij}$) falls within $1\sigma$.}
+\end{figure}
+
 
 %======================================================================
 \section{Statistical Validation}
@@ -324,6 +340,14 @@ fundamental physics), the RMS residual in $\log_{10}(1+z)$ is
 which is 1.8\% of one period---the predicted peak positions are essentially
 exact.
 
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{fig3_peak_comparison.png}
+\caption{\label{fig:peaks}Predicted vs.\ observed peak positions in
+  $\log_{10}(1+z)$ space.  The predicted positions (vertical dashed lines)
+  use period $0.08870$ with the best-fit offset.  RMS residual is $0.00161$
+  (1.8\% of one period).}
+\end{figure}
+
 \subsection{Monte Carlo Significance}
 
 To assess whether this match could arise by chance, we generate 50{,}000 sets
@@ -338,6 +362,14 @@ p < 0.00002\,.
 \end{equation}
 The null hypothesis of random peak placement in $\log_{10}(1+z)$ space is
 rejected at ${>}\,99.99\%$ confidence.
+
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{fig4_monte_carlo.png}
+\caption{\label{fig:mc}Monte Carlo distribution of RMS residuals for
+  50{,}000 random peak sets.  The observed RMS ($0.00161$, vertical line)
+  lies far below the distribution---zero random sets match this well,
+  giving $p < 0.00002$.}
+\end{figure}
 
 \subsection{Individual Arp Pair Test}
 
