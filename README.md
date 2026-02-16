@@ -2,7 +2,7 @@
 
 **A Zero-Parameter Prediction from Vacuum Mode Structure in Isothermal Halos**
 
-Keith (2026)
+Keith Brodie (2026)  https://zenodo.org/records/18664931
 
 ---
 
