@@ -1,6 +1,8 @@
-# Karlsson's Redshift Periodicity as an Efimov Spectrum: A Zero-Parameter Prediction from Vacuum Mode Structure in Isothermal Halos
+# Karlsson's Redshift Periodicity as an Efimov Spectrum
 
-**Keith (2026)**
+**A Zero-Parameter Prediction from Vacuum Mode Structure in Isothermal Halos**
+
+Keith (2026)
 
 ---
 
@@ -74,6 +76,9 @@ $$\frac{\kappa_{n+1}}{\kappa_n} = \exp\!\left(\frac{\pi}{\mu}\right), \qquad \mu
 This is exact — a mathematical theorem, not an approximation. It is the same log-periodicity discovered by Efimov (1970) in three-body quantum mechanics, verified experimentally in cold-atom systems and numerically to parts in $10^{11}$.
 
 The eigenvalues correspond to zeros of the modified Bessel function $K_{i\mu}(\kappa a)$, which are exactly log-periodic in $\kappa$ with ratio $\exp(\pi/\mu)$.
+
+![Efimov verification](figures/fig1_efimov_verification.png)
+*Figure 1: Left — the modified Bessel function $K_{i\mu}(x)$ for $\mu = 15.38$, showing log-periodic zeros (red dashed lines). Right — consecutive zero ratios converge to the theoretical value $\exp(\pi/\mu) = 1.2266$ to machine precision.*
 
 ### 2.3 Mapping to Redshift Periodicity
 
@@ -156,7 +161,7 @@ $$\mu = \sqrt{24\pi^2 - \tfrac{1}{4}} = 15.383$$
 
 $$\alpha = \exp(\pi/\mu) = 1.2266$$
 
-$$\boxed{\log_{10}(\alpha) = 0.08870}$$
+$$\Large\boxed{\log_{10}(\alpha) = 0.08870}$$
 
 Compared to Karlsson's observed value:
 
@@ -177,11 +182,14 @@ The predicted period depends on $N_{\text{DOF}}$ through $g = N \times (2\pi)^2$
 | 2 | 78.96 | 0.15379 | $13.0\sigma$ | Propagating gravitons only |
 | 4 | 157.91 | 0.10866 | $3.9\sigma$ | |
 | 5 | 197.39 | 0.09717 | $1.6\sigma$ | |
-| **6** | **236.87** | **0.08870** | **$0.06\sigma$** | **Full spatial metric $h_{ij}$** |
+| **6** | **236.87** | **0.08870** | **0.06σ** | **Full spatial metric h_ij** |
 | 7 | 276.35 | 0.08211 | $1.4\sigma$ | |
 | 8 | 315.83 | 0.07680 | $2.4\sigma$ | |
 
 Only $N_{\text{DOF}} = 6$ falls within $1\sigma$. The nearest competitors ($N = 5$ at $1.6\sigma$ and $N = 7$ at $1.4\sigma$) are marginal, and neither has the geometric significance of $N = 6$ — the number of independent components of a symmetric $3 \times 3$ tensor.
+
+![Sensitivity analysis](figures/fig2_sensitivity.png)
+*Figure 2: Predicted Karlsson period vs. number of field DOF. The red band shows the observed value $0.089 \pm 0.005$. Only $N = 6$ (green dashed line) — the number of independent components of the spatial metric — falls within $1\sigma$.*
 
 ---
 
@@ -191,13 +199,16 @@ Only $N_{\text{DOF}} = 6$ falls within $1\sigma$. The nearest competitors ($N = 
 
 We compare our predicted peaks to the 8 consensus values reported across multiple surveys (Karlsson 1971, 1977; Burbidge 1968, 2001; Bell & Comeau 2003):
 
-$$z_{\text{peaks}} = \{0.061, 0.30, 0.60, 0.96, 1.41, 1.96, 2.64, 3.48\}$$
+$$z_{\text{peaks}} = \lbrace 0.061, 0.30, 0.60, 0.96, 1.41, 1.96, 2.64, 3.48 \rbrace$$
 
 Using our predicted period $\Delta = 0.08870$ with the offset determined from the data (the offset is a free parameter representing initial conditions, not fundamental physics), the RMS residual in $\log_{10}(1+z)$ is:
 
 $$\text{RMS} = 0.00161$$
 
 This is 1.8% of one period — the predicted peak positions are essentially exact.
+
+![Peak comparison](figures/fig3_peak_comparison.png)
+*Figure 3: Top — predicted (blue line) vs. observed (red circles) Karlsson peaks in $\log_{10}(1+z)$ space. Bottom — residuals, with RMS = 0.00161 (1.8% of one period).*
 
 ### 4.2 Monte Carlo Significance
 
@@ -207,7 +218,10 @@ To assess whether this match could arise by chance, we perform a Monte Carlo tes
 
 $$p < 0.00002$$
 
-The Karlsson peaks are not randomly consistent with our period — the match is highly significant.
+The null hypothesis of random peak placement in $\log_{10}(1+z)$ space is rejected at >99.99% confidence.
+
+![Monte Carlo](figures/fig4_monte_carlo.png)
+*Figure 4: Distribution of best-fit RMS for 50,000 random peak sets (blue histogram) vs. the observed RMS (red dashed line). No random set matches the observed quality of fit.*
 
 ### 4.3 Individual Arp Pair Test
 
@@ -231,7 +245,7 @@ $$g_\xi = \frac{4}{3}\frac{\sigma^2}{c^2} \sim 10^{-6}$$
 
 The total for 6 DOF is $\sim 6 \times 10^{-6}$ — **too small by a factor of $4 \times 10^7$**.
 
-This is **expected**, not problematic. The Jacobson (1995) derivation of the Einstein equations from horizon thermodynamics ($\delta Q = T\,dS$ with $S = A/4l_P^2$) is intrinsically non-perturbative. The entropy $S = A/4l_P^2$ counts ALL vacuum degrees of freedom at a horizon — it is not a perturbative correction to flat-space QFT. Our coupling $g = 24\pi^2$ has the structure of a counting quantity (integer $\times$ geometric factor), suggesting a topological rather than dynamical origin.
+This is **expected**, not problematic. The Jacobson (1995) derivation of the Einstein equations from horizon thermodynamics ($\delta Q = T\,dS$ with $S = A/4l_P^2$) is intrinsically non-perturbative. The entropy $S = A/4l_P^2$ counts ALL vacuum degrees of freedom at a horizon — it is not a perturbative correction to flat-space QFT. Our coupling $g = 24\pi^2$ has the structure of a counting quantity (integer × geometric factor), suggesting a topological rather than dynamical origin.
 
 The analogy to electromagnetism is instructive: the fine-structure constant $\alpha_{\text{EM}} = 1/137$ cannot be derived from classical electrodynamics. It requires the full quantum theory. Similarly, $g = 24\pi^2$ may require a non-perturbative quantum gravity calculation to derive rigorously.
 
@@ -251,7 +265,7 @@ We have been careful to label each step in the derivation chain:
 
 ### 6.2 The Offset
 
-The Karlsson formula contains an offset $(\sim -0.0632)$ in addition to the period. Our derivation predicts only the period. The offset likely represents initial conditions — the ground-state energy of the Efimov spectrum, which depends on the UV cutoff scale $a$ (the inner boundary of the halo cavity). Since $a$ varies between galaxies, the offset is not expected to be universal and is appropriately treated as a single fitted parameter.
+The Karlsson formula contains an offset ($\sim -0.0632$) in addition to the period. Our derivation predicts only the period. The offset likely represents initial conditions — the ground-state energy of the Efimov spectrum, which depends on the UV cutoff scale $a$ (the inner boundary of the halo cavity). Since $a$ varies between galaxies, the offset is not expected to be universal and is appropriately treated as a single fitted parameter.
 
 ### 6.3 Relation to Quantised Inertia
 
@@ -313,10 +327,10 @@ This is, to our knowledge, the first derivation of the Karlsson spacing from phy
 - Efimov, V. (1970). Energy levels arising from resonant two-body forces in a three-body system. *Phys. Lett. B*, 33, 563.
 - Ford, L.H. & Vilenkin, A. (1981). Quantum radiation by moving mirrors. *Phys. Rev. D*, 25, 2569.
 - Fulton, C. & Arp, H. (2012). The 2dF Redshift Survey II. *arXiv:1202.6591*.
-- Klypin, A. et al. (2016). MultiDark simulations: the story of dark matter halo concentrations. *MNRAS*, 457, 4340.
 - Jacobson, T. (1995). Thermodynamics of spacetime: The Einstein equation of state. *Phys. Rev. Lett.*, 75, 1260.
 - Karlsson, K.G. (1971). Possible discretization of quasar redshifts. *Astron. Astrophys.*, 13, 333.
 - Karlsson, K.G. (1977). On the existence of significant peaks in the quasar redshift distribution. *Astron. Astrophys.*, 58, 237.
+- Klypin, A. et al. (2016). MultiDark simulations: the story of dark matter halo concentrations. *MNRAS*, 457, 4340.
 - López-Corredoira, M. & Gutiérrez, C.M. (2004). The field surrounding NGC 7603. *Astron. Astrophys.*, 421, 407.
 - Mal, S. et al. (2024). Quasar redshift periodicity revisited with SDSS and 2dF. *Research in Astronomy and Astrophysics*, 24(4), 045013.
 - McCulloch, M.E. (2007). Modelling the Pioneer anomaly as modified inertia. *MNRAS*, 376, 338.
@@ -326,7 +340,7 @@ This is, to our knowledge, the first derivation of the Karlsson spacing from phy
 
 ## Appendix A: Numerical Verification
 
-All numerical results in this paper can be reproduced using the script `reproduce.py` included with this manuscript. The script:
+All numerical results in this paper can be reproduced using the script [`reproduce.py`](reproduce.py) included with this repository. The script:
 
 1. Computes the Efimov eigenvalue ratio for $g = 24\pi^2$ and verifies the Karlsson match
 2. Numerically finds zeros of $K_{i\mu}(x)$ to verify exact log-periodicity to $10^{-11}$
@@ -334,4 +348,7 @@ All numerical results in this paper can be reproduced using the script `reproduc
 4. Runs the Monte Carlo significance test (50,000 trials)
 5. Generates all figures
 
-The script requires only `numpy`, `scipy`, `mpmath`, and `matplotlib`.
+```bash
+pip install numpy scipy mpmath matplotlib
+python reproduce.py
+```
