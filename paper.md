@@ -140,13 +140,7 @@ The isothermal halo is precisely such a boundary. The transition from the 1/r² 
 
 ### 3.2 The Mode-Counting Factor
 
-Each gravitational DOF at the halo boundary contributes to the effective Efimov coupling through the density of states on the 2-dimensional boundary surface. The standard phase-space density for modes on a 2D surface is:
-
-```math
-\frac{d^2 k}{(2\pi)^2}
-```
-
-Each mode cell occupies an area (2π)² in 2D momentum space. This is the same factor that governs the density of states in any 2D mode-counting problem — Casimir energies, surface phonons, membrane fluctuations, or gravitational boundary modes. It is a consequence of Fourier normalization in two dimensions.
+Each gravitational DOF at the halo boundary contributes to the effective Efimov coupling through the standard density of states on the 2-dimensional boundary surface. The phase-space cell for modes on a 2D surface has area (2π)² in momentum space — the standard Fourier normalization that governs any 2D mode-counting problem, from Casimir energies to membrane fluctuations (Ford & Vilenkin 1981).
 
 The total effective coupling is therefore:
 
