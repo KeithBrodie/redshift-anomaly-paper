@@ -120,7 +120,7 @@ Inverting the observed Δ = 0.089 ± 0.005:
 \alpha = 10^{0.089} = 1.2274, \qquad \mu = \frac{\pi}{\ln\alpha} = 15.31, \qquad g = \mu^2 + \tfrac{1}{4} = 235.0
 ```
 
-The question becomes: can we determine g from physics?
+The required coupling is g ≈ 235. In the next section we show that established boundary mode-counting gives exactly this value.
 
 ---
 
